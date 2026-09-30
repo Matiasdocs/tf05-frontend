@@ -9,7 +9,7 @@ export default async function taskDeleteHandler(event: Event): Promise<void> {
   const { userId: idUser, taskId } = liElement;
 
   try {
-    await taskDeleteApi(idUser, taskId);
+    await taskDeleteApi(taskId);
     await tasksListRender(idUser);
   } catch (error) {
     console.error(error);
